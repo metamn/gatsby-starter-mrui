@@ -4,6 +4,7 @@ module.exports = {
 		description: `It is meant to aid component development in a live environment`,
 		author: `@metamn`,
 	},
+	pathPrefix: `/gatsby-starter-mrui`,
 	plugins: [
 		`gatsby-plugin-react-helmet`,
 		{
