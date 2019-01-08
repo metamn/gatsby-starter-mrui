@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: `A Gatsby starter for Metamn React UI Components`,
+		title: `A Gatsby starter for MR-UI`,
 		description: `It is meant to aid component development in a live environment`,
 		author: `@metamn`,
 	},
