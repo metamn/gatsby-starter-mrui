@@ -9,10 +9,15 @@ It is meant to aid mr-ui component development in a live environment.
 
 ## Features
 
+- A CSS reset based on Normalize.css
 - Deploys to Github Pages
 - Based on the barebones [Gatsby Default Starter](https://www.gatsbyjs.org/docs/quick-start)
 
 ## Plugins
+
+## Styled components
+
+- https://www.gatsbyjs.org/docs/styled-components/
 
 ## `gatsby-image`, to display images
 
