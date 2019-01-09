@@ -8,10 +8,12 @@ import SEO from '../SEO'
 
 import styled, { css } from "styled-components"
 import theme from '../Theme'
+import Colors from '../Colors'
 
 const Container = styled.div`
 	background-color: ${props => props.theme.colors.background};
 	color: ${props => props.theme.colors.text};
+	${Colors({ background: 'red', text: 'white'})}
 `
 
 const LayoutBasic = ({ children }) => (

@@ -9,6 +9,7 @@ It is meant to aid mr-ui component development in a live environment.
 
 ## Features
 
+- Theming
 - A typographic grid: https://tinyurl.com/yd2q4rpw
 - A CSS reset: https://tinyurl.com/y9msxecc
 - Deploys to Github Pages
