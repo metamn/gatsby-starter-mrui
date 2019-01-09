@@ -14,13 +14,21 @@ It is meant to aid mr-ui component development in a live environment.
 
 ## Plugins
 
-### Sharp and `gatsby-image`, for images
+## `gatsby-image`, to display images
 
-- [Sharp](https://www.gatsbyjs.org/docs/working-with-images/#query-images-with-graphql) - to process and query images
 - [gatsby-image](https://www.gatsbyjs.org/docs/working-with-images/#optimizing-images-with-gatsby-image)
+- [A comprehensive guide](https://www.orangejellyfish.com/blog/a-comprehensive-guide-to-images-in-gatsby/)
 - Component: Image
+
+
+### Sharp, for resizing and optimizig images
+
+- [Sharp](https://www.gatsbyjs.org/docs/working-with-images/#query-images-with-graphql)
+- Setup: `gatsby-config.js`
+
 
 ### React Helmet, for SEO
 
 - [React Helmet](https://www.gatsbyjs.org/docs/add-page-metadata/) - for managing the document head
 - Component: SEO
+- Setup: `gatsby-config.js`
