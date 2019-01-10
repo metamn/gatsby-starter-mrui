@@ -9,6 +9,7 @@ It is meant to aid mr-ui component development in a live environment.
 
 ## Features
 
+- Modular scale
 - Custom fonts
 - Theming with light and dark color schemes
 - A typographic grid: https://tinyurl.com/yd2q4rpw
@@ -17,6 +18,10 @@ It is meant to aid mr-ui component development in a live environment.
 - Based on the barebones [Gatsby Default Starter](https://www.gatsbyjs.org/docs/quick-start)
 
 ## Plugins
+
+## Modular scale
+
+- https://www.modularscale.com/
 
 ## webfontloader
 

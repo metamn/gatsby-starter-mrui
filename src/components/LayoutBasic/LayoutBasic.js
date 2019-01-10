@@ -17,15 +17,20 @@ const LayoutBasic = ({ children }) => (
 	<StaticQuery
 		query={layoutBasicQuery}
 		render={data => (
-			<Container>
+			<>
 				<CSSReset />
-				<TypographicGrid />
+				<TypographicGrid
+				 	displayVerticalRhytm={false}
+					displayHorizontalRhytm={false}
+				/>
 				<SEO
 					title="Home"
 					keywords={[`metamn`, `user interface`, `components`, `gatsby`, `react`]}
 				/>
-				{children}
-			</Container>
+				<Container>
+					{children}
+				</Container>
+			</>
 		)}
 	/>
 )
