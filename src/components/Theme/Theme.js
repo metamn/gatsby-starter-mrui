@@ -6,7 +6,9 @@ const Theme = {
 		background: 'white',
 	},
 	fonts: {
-		default: 'Nimbus Sans',
+		default: {
+			typeface: 'Nimbus Sans',
+		}
 	}
 };
 

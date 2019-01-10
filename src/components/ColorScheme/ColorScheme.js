@@ -1,7 +1,7 @@
 import React from 'react'
 import theme from '../Theme'
 
-const Colors = (scheme) => {
+const ColorScheme = (scheme) => {
 	const colors = theme.colors
 	let background, text = ''
 
@@ -22,4 +22,4 @@ const Colors = (scheme) => {
 	}
 }
 
-export default Colors
+export default ColorScheme

@@ -7,10 +7,10 @@ import CSSReset from '../CSSReset'
 import SEO from '../SEO'
 
 import styled, { css } from "styled-components"
-import Colors from '../Colors'
+import TextStyle from '../TextStyle'
 
 const Container = styled.div`
-	${Colors()}
+	${TextStyle()}
 `
 
 const LayoutBasic = ({ children }) => (
