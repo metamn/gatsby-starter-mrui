@@ -1,15 +1,17 @@
 import React from 'react'
-import ColorScheme from '../ColorScheme'
+import Font from '../Font'
+import Color from '../Color'
 
 const TextStyle = (style) => {
 	switch (style) {
 		case '':
 
 			break;
-		case 'body'
+		case 'body':
 		default:
 			return (
-				ColorScheme()
+				Font(),
+				Color()
 			)
 	}
 }

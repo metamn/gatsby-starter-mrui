@@ -2,14 +2,32 @@ import React from 'react'
 
 const Theme = {
 	colors: {
-		text: 'black',
-		background: 'white',
+		scheme: {
+			light: {
+				text: 'black',
+				background: 'white',
+			},
+			dark: {
+				text: 'white',
+				background: 'black',
+			},
+		},
+		pairs: {
+			normal: {
+				text: 'text',
+				background: 'background',
+			},
+			inverted: {
+				text: 'background',
+				background: 'text',
+			}
+		}
 	},
 	fonts: {
-		default: {
+		body: {
 			typeface: 'Nimbus Sans',
 		}
-	}
+	},
 };
 
 export default Theme
