@@ -6,11 +6,13 @@ import TypographicGrid from '../TypographicGrid'
 import CSSReset from '../CSSReset'
 import SEO from '../SEO'
 
-import styled, { css } from "styled-components"
+import styled from 'styled-components'
 import TextStyle from '../TextStyle'
+import Color from '../Color'
 
 const Container = styled.div`
 	${TextStyle()}
+	${Color()}
 `
 
 const LayoutBasic = ({ children }) => (

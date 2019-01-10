@@ -5,8 +5,10 @@ import theme from '../Theme'
 import Font from '../Font'
 import Scale from '../Scale'
 
-const TextStyle = (style = 'headline') => {
+const TextStyle = (style = 'body') => {
 	const ts = theme.textStyle[style]
+	if (!ts) return
+	
 	let ret = ''
 
 	ret += ts.scale ? css`${Scale(ts.scale)}` : ''

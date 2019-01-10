@@ -27,7 +27,6 @@ const Theme = {
 		body: {
 			css: `
 				font-family: nimbus-sans, sans-serif;
-				line-height: 1.48em;
 				letter-spacing: 1px;
 			`,
 			source: {
