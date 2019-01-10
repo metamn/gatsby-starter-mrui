@@ -5,7 +5,7 @@ const Theme = {
 		scheme: {
 			light: {
 				text: 'black',
-				background: 'white',
+				background: 'snow',
 			},
 			dark: {
 				text: 'white',
@@ -25,7 +25,16 @@ const Theme = {
 	},
 	fonts: {
 		body: {
-			typeface: 'Nimbus Sans',
+			css: `
+				font-family: nimbus-sans, sans-serif;
+				line-height: 1.48em;
+				letter-spacing: 1px;
+			`,
+			source: {
+				typekit: {
+					id: 'syb1owt',
+				},
+			}
 		}
 	},
 };

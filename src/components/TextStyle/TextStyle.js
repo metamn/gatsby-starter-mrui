@@ -1,19 +1,14 @@
 import React from 'react'
+import { css } from "styled-components"
+
 import Font from '../Font'
 import Color from '../Color'
 
 const TextStyle = (style) => {
-	switch (style) {
-		case '':
-
-			break;
-		case 'body':
-		default:
-			return (
-				Font(),
-				Color()
-			)
-	}
+	return css`
+		${Color()}
+		${Font()}
+	`
 }
 
 export default TextStyle
