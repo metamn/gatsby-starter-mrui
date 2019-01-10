@@ -37,6 +37,19 @@ const Theme = {
 			}
 		}
 	},
+	modularScale: {
+		base: [1],
+		ratio: 1.25,
+	},
+	textStyle: {
+		default: {
+			font: 'body',
+		},
+		headline: {
+			font: 'body',
+			scale: 10,
+		}
+	}
 };
 
 export default Theme

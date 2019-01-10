@@ -4,7 +4,7 @@ import theme from '../Theme'
 import WebFont from 'webfontloader'
 
 
-const Font = (variant = 'body') => {
+const Font = (variant = 'default') => {
 	const font = theme.fonts[variant]
 
 	WebFont.load(font.source)
