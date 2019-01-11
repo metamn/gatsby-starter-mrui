@@ -14,6 +14,7 @@ It is meant to aid mr-ui component development in a live environment.
 - Theming with light and dark color schemes
 - A typographic grid: https://tinyurl.com/yd2q4rpw
 - A CSS reset: https://tinyurl.com/y9msxecc
+- Better SEO titles
 - Deploys to Github Pages
 - Based on the barebones [Gatsby Default Starter](https://www.gatsbyjs.org/docs/quick-start)
 

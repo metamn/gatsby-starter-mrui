@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
-		title: `A Gatsby starter for mr-ui`,
-		description: `It is meant to aid mr-ui component development in a live environment.`,
+		title: `A Gatsby multipurpose starter`,
+		description: `For landing pages, marketing sites and blogs`,
 		author: `@metamn`,
 	},
 	pathPrefix: `/gatsby-starter-mrui`,

@@ -15,40 +15,33 @@ const Container = styled.div`
 	${Color()}
 `
 
-const LayoutBasic = ({ children }) => (
-	<StaticQuery
-		query={layoutBasicQuery}
-		render={data => (
-			<>
-				<Reset />
-				<TypographicGrid
-				 	displayVerticalRhytm={true}
-					displayHorizontalRhytm={true}
-				/>
-				<SEO
-					title="Home"
-					keywords={[`metamn`, `user interface`, `components`, `gatsby`, `react`]}
-				/>
-				<Container>
-					{children}
-				</Container>
-			</>
-		)}
-	/>
+const LayoutBasic = ({ title, keywords, children }) => (
+	<>
+		<Reset />
+		<TypographicGrid
+			displayVerticalRhytm={false}
+			displayHorizontalRhytm={false}
+		/>
+		<SEO
+			title={title}
+			keywords={keywords}
+		/>
+		<Container>
+			{children}
+		</Container>
+	</>
 )
 
-const layoutBasicQuery = graphql`
-	query {
-		site {
-			siteMetadata {
-				title
-			}
-		}
-	}
-`
 
 LayoutBasic.propTypes = {
 	children: PropTypes.node.isRequired,
+	title: PropTypes.string,
+	keywords: PropTypes.array,
+}
+
+LayoutBasic.defaultProps = {
+	title: 'Home',
+	keywords: [`gatsby`],
 }
 
 

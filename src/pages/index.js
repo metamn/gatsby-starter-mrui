@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import LayoutBasic from '../components/LayoutBasic'
 import Color from '../components/Color'
 
+import { Link } from "gatsby"
+
 const Container = styled.div`
 	min-height: 100vh;
 	padding: var(--lem);
@@ -17,11 +19,10 @@ const IndexPage = () => (
 	<LayoutBasic>
 		<Container>
 			<h1>A Gatsby multipurpose starter</h1>
-			<p>Ideal for:</p>
+			<p>Gives you a headstart for:</p>
 			<ul>
 				<li>Landing pages</li>
 				<li>Markting websites</li>
-				<li>Docs</li>
 				<li>Blogs</li>
 			</ul>
 			<pre>
@@ -29,9 +30,7 @@ const IndexPage = () => (
 				npx gatsby new my-project https://github.com/gatsbyjs/gatsby-starter-blog
 				</code>
 			</pre>
-			<Button>
-				Features
-			</Button>
+			<Link to='/features/'>Features</Link>
 			Github
 		</Container>
 	</LayoutBasic>

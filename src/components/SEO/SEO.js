@@ -9,12 +9,13 @@ function SEO({ description, lang, meta, keywords, title }) {
 			query={seoQuery}
 			render={data => {
 				const metaDescription = description || data.site.siteMetadata.description
+				const metaTitle = data.site.siteMetadata.title
+				const newTitle = (title == 'Home') ? `${metaTitle} - ${metaDescription}` : `${title} - ${metaTitle}`
 
 				return (
 					<Helmet
 						htmlAttributes={{lang,}}
-						title={title}
-						titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+						title={newTitle}
 						meta={
 							[
 								{
@@ -23,7 +24,7 @@ function SEO({ description, lang, meta, keywords, title }) {
 								},
 								{
 									property: `og:title`,
-									content: title,
+									content: newTitle,
 								},
 								{
 									property: `og:description`,
@@ -32,22 +33,6 @@ function SEO({ description, lang, meta, keywords, title }) {
 								{
 									property: `og:type`,
 									content: `website`,
-								},
-								{
-									name: `twitter:card`,
-									content: `summary`,
-								},
-								{
-									name: `twitter:creator`,
-									content: data.site.siteMetadata.author,
-								},
-								{
-									name: `twitter:title`,
-									content: title,
-								},
-								{
-									name: `twitter:description`,
-									content: metaDescription,
 								},
 							]
 							.concat(
