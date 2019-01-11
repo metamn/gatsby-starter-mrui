@@ -6,7 +6,7 @@ import Font from '../Font'
 import Scale from '../Scale'
 
 const Text = (style = 'body') => {
-	const text = theme.Text[style]
+	const text = theme.text[style]
 	if (!text) return
 
 	let ret = ''

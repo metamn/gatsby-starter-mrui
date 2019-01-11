@@ -20,12 +20,13 @@ const IndexPage = () => (
 			<p>Ideal for:</p>
 			<ul>
 				<li>Landing pages</li>
-				<li>Homepages</li>
+				<li>Markting websites</li>
+				<li>Docs</li>
 				<li>Blogs</li>
 			</ul>
 			<pre>
 				<code>
-				npx gatsby new my-landing-page https://github.com/gatsbyjs/gatsby-starter-blog
+				npx gatsby new my-project https://github.com/gatsbyjs/gatsby-starter-blog
 				</code>
 			</pre>
 			<Button>

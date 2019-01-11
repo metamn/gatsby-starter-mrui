@@ -36,12 +36,12 @@ const Theme = {
 			}
 		}
 	},
-	Scale: {
+	scale: {
 		base: [1],
 		ratio: 1.25,
 	},
-	Text: {
-		default: {
+	text: {
+		body: {
 			font: 'body',
 		},
 		headline: {
