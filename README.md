@@ -1,11 +1,20 @@
-# Gatsby starter for mr-ui
+# A Gatsby multipurpose starter
 
-A Gatsby starter for [Metamn React UI Components](https://github.com/metamn/mr-ui).
+A Gatsby starter for landing pages, marketing sites and blogs.
 See live at http://metamn.io/gatsby-starter-mrui/
 
-## About
+## The need
 
-It is meant to aid mr-ui component development in a live environment.
+Official Gatsby starters seem to follow the Facebook *move fast and break things* mantra.
+
+The code inside [these](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/) [starters](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-default/) is far from best practices. They just simply and quickly showcase main Gatsby features without aiming to be production ready.
+
+This multipurpose starter *moves slow and fix things* to provide a solid base for ambitious Gatsby projects.  
+
+## To-do
+
+- Figure out how to add subpages like Features/Custom fonts
+- Add content for Features and Blogs
 
 ## Features
 
@@ -20,30 +29,28 @@ It is meant to aid mr-ui component development in a live environment.
 
 ## Plugins
 
-## Modular scale
+### Modular scale
 
 - https://www.modularscale.com/
 
-## webfontloader
+### webfontloader
 
 - https://github.com/typekit/webfontloader
 
-## Styled components
+### Styled components
 
 - https://www.gatsbyjs.org/docs/styled-components/
 
-## `gatsby-image`, to display images
+### `gatsby-image`, to display images
 
 - [gatsby-image](https://www.gatsbyjs.org/docs/working-with-images/#optimizing-images-with-gatsby-image)
 - [A comprehensive guide](https://www.orangejellyfish.com/blog/a-comprehensive-guide-to-images-in-gatsby/)
 - Component: Image
 
-
 ### Sharp, for resizing and optimizig images
 
 - [Sharp](https://www.gatsbyjs.org/docs/working-with-images/#query-images-with-graphql)
 - Setup: `gatsby-config.js`
-
 
 ### React Helmet, for SEO
 
