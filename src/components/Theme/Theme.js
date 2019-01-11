@@ -36,11 +36,11 @@ const Theme = {
 			}
 		}
 	},
-	modularScale: {
+	Scale: {
 		base: [1],
 		ratio: 1.25,
 	},
-	textStyle: {
+	Text: {
 		default: {
 			font: 'body',
 		},

@@ -67,7 +67,7 @@ const GlobalReset = createGlobalStyle`
 /**
 * The main class
 */
-class CSSReset extends React.Component {
+class Reset extends React.Component {
 	render() {
 		return <GlobalReset />
 	}
@@ -76,13 +76,13 @@ class CSSReset extends React.Component {
 /**
 * The prop types
 */
-CSSReset.propTypes = {
+Reset.propTypes = {
 };
 
 /**
 * Default props
 */
-CSSReset.defaultProps = {
+Reset.defaultProps = {
 };
 
-export default CSSReset;
+export default Reset;

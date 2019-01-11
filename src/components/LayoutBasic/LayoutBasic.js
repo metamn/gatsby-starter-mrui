@@ -3,15 +3,15 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import TypographicGrid from '../TypographicGrid'
-import CSSReset from '../CSSReset'
+import Reset from '../Reset'
 import SEO from '../SEO'
 
 import styled from 'styled-components'
-import TextStyle from '../TextStyle'
+import Text from '../Text'
 import Color from '../Color'
 
 const Container = styled.div`
-	${TextStyle()}
+	${Text()}
 	${Color()}
 `
 
@@ -20,7 +20,7 @@ const LayoutBasic = ({ children }) => (
 		query={layoutBasicQuery}
 		render={data => (
 			<>
-				<CSSReset />
+				<Reset />
 				<TypographicGrid
 				 	displayVerticalRhytm={false}
 					displayHorizontalRhytm={false}
