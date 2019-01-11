@@ -22,8 +22,8 @@ const LayoutBasic = ({ children }) => (
 			<>
 				<Reset />
 				<TypographicGrid
-				 	displayVerticalRhytm={false}
-					displayHorizontalRhytm={false}
+				 	displayVerticalRhytm={true}
+					displayHorizontalRhytm={true}
 				/>
 				<SEO
 					title="Home"
