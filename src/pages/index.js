@@ -10,7 +10,7 @@ const Container = styled.div`
 `
 
 const Button = styled.button`
-	${Color('light', 'inverted')}
+	${Color('inverted')}
 `
 
 const IndexPage = () => (
