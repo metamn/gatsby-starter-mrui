@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import LayoutBasic from '../components/LayoutBasic'
-
+import Layout from '../components/Layout'
 import { Link } from "gatsby"
 
 const Container = styled.div`
@@ -10,15 +9,14 @@ const Container = styled.div`
 	padding: var(--lem);
 `
 
-
 const FeaturesPage = () => (
-	<LayoutBasic
+	<Layout
 		title='Features'
 		>
 		<Container>
 			Features
 		</Container>
-	</LayoutBasic>
+	</Layout>
 )
 
 export default FeaturesPage

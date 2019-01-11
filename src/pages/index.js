@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import LayoutBasic from '../components/LayoutBasic'
+import Layout from '../components/Layout'
 import Color from '../components/Color'
 
 import { Link } from "gatsby"
@@ -16,7 +16,7 @@ const Button = styled.button`
 `
 
 const IndexPage = () => (
-	<LayoutBasic>
+	<Layout>
 		<Container>
 			<h1>A Gatsby multipurpose starter</h1>
 			<p>Gives you a headstart for:</p>
@@ -33,7 +33,7 @@ const IndexPage = () => (
 			<Link to='/features/'>Features</Link>
 			Github
 		</Container>
-	</LayoutBasic>
+	</Layout>
 )
 
 export default IndexPage

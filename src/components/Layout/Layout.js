@@ -15,7 +15,7 @@ const Container = styled.div`
 	${Color()}
 `
 
-const LayoutBasic = ({ title, keywords, children }) => (
+const Layout = ({ title, keywords, children }) => (
 	<>
 		<Reset />
 		<TypographicGrid
@@ -33,16 +33,16 @@ const LayoutBasic = ({ title, keywords, children }) => (
 )
 
 
-LayoutBasic.propTypes = {
+Layout.propTypes = {
 	children: PropTypes.node.isRequired,
 	title: PropTypes.string,
 	keywords: PropTypes.array,
 }
 
-LayoutBasic.defaultProps = {
+Layout.defaultProps = {
 	title: 'Home',
 	keywords: [`gatsby`],
 }
 
 
-export default LayoutBasic
+export default Layout
