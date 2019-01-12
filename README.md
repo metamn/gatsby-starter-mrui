@@ -13,6 +13,8 @@ This multipurpose starter *moves slow and fix things* to provide a solid base fo
 
 ## To-do
 
+- Test Remark features
+
 ## Features
 
 - Markdown support with Remark
@@ -30,7 +32,9 @@ This multipurpose starter *moves slow and fix things* to provide a solid base fo
 ### Remark
 
 - https://www.gatsbyjs.org/packages/gatsby-transformer-remark/
-- all options and plugins are enabled (except KaTeX)
+- all options and plugins are enabled except KaTeX, and rendering components: https://using-remark.gatsbyjs.org/custom-components/
+- rendering components will be done by MDX
+- mapping HTML elements is already done since the template is rendered inside the <Layout> component which re-styles the markdown output
 
 ### Modular scale
 
