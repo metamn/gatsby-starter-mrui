@@ -13,10 +13,17 @@ This multipurpose starter *moves slow and fix things* to provide a solid base fo
 
 ## To-do
 
+- Reorganize features (pages) / posts / metadata
+	- Go by `slug` also in Pages
+	- Replace `features` everywhere (in queries and templates and so on)  with `pages`
+	- Generate slugs automatically
+	- Add prefix like `blog/` for posts
 - Test Remark features
+- Sometimes a `rm -Rf .cache/gatsby-mdx/*` needed to fix nasty unknown errors like `ReferenceError: window is not defined`
 
 ## Features
 
+- Posts and Pages
 - Markdown support with Remark and MDX
 - Modular scale
 - Custom fonts
