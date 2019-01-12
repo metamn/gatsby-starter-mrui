@@ -55,6 +55,12 @@ module.exports = {
 				],
 			},
 		},
+		{
+			resolve: `gatsby-mdx`,
+			options: {
+				// defaultLayouts: { default: `${__dirname}/src/components/Layout/Layout.js'` },
+			},
+		},
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-transformer-sharp`,

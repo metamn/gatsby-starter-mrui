@@ -17,7 +17,7 @@ This multipurpose starter *moves slow and fix things* to provide a solid base fo
 
 ## Features
 
-- Markdown support with Remark
+- Markdown support with Remark and MDX
 - Modular scale
 - Custom fonts
 - Theming with light and dark color schemes
@@ -28,6 +28,12 @@ This multipurpose starter *moves slow and fix things* to provide a solid base fo
 - Based on the barebones [Gatsby Default Starter](https://www.gatsbyjs.org/docs/quick-start)
 
 ## Plugins
+
+### MDX
+
+- https://www.gatsbyjs.org/packages/gatsby-mdx/
+- It works out of the box without any config / graphql magic
+- mapping HTML elements is done be rendering the MDX file content inside the <Layout> component
 
 ### Remark
 
