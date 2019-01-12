@@ -13,8 +13,8 @@ This multipurpose starter *moves slow and fix things* to provide a solid base fo
 
 ## To-do
 
-- Figure out how to add subpages like Features/Custom fonts
-- Add content for Features and Blogs
+- Figure out how to add subpages like Features/Custom fonts (folders / subfolders ??? check Emma MDX starter ...)
+- Add content for Features and Blogs via Remark (with components !) and MDX
 
 ## Features
 
