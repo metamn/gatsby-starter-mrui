@@ -30,6 +30,7 @@ This multipurpose starter *moves slow and fix things* to provide a solid base fo
 ### Remark
 
 - https://www.gatsbyjs.org/packages/gatsby-transformer-remark/
+- all options and plugins are enabled (except KaTeX)
 
 ### Modular scale
 

@@ -16,7 +16,7 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				name: `pages`,
+				name: `featues`,
 				path: `${__dirname}/src/pages/features`,
 			},
 		},
@@ -31,8 +31,28 @@ module.exports = {
 				pedantic: true,
 				// GitHub Flavored Markdown mode (default: true)
 				gfm: true,
+				// Excerpt
+				"excerpt_separator": `<!--more-->`,
 				// Plugins configs
-				plugins: [],
+				plugins: [
+					{
+						resolve: `gatsby-remark-images`,
+						options: {
+							maxWidth: 590,
+						},
+					},
+					{
+						resolve: `gatsby-remark-responsive-iframe`,
+						options: {
+							wrapperStyle: `margin-bottom: 1.0725rem`,
+						},
+					},
+					`gatsby-remark-prismjs`,
+					`gatsby-remark-copy-linked-files`,
+					`gatsby-remark-smartypants`,
+					`gatsby-plugin-catch-links`,
+					`gatsby-remark-embed-snippet`,
+				],
 			},
 		},
 		`gatsby-plugin-styled-components`,
