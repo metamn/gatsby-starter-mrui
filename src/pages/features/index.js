@@ -17,7 +17,10 @@ const FeaturesPage = () => (
 			<p>
 				Features
 			</p>
-			<Link to='/features/modular-scale'>Modular scale</Link>
+			<ul>
+				<li><Link to='/features/modular-scale'>Modular scale</Link></li>
+				<li><Link to='/features/custom-fonts'>Custom fonts</Link></li>
+			</ul>
 		</Container>
 	</Layout>
 )

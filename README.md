@@ -13,11 +13,9 @@ This multipurpose starter *moves slow and fix things* to provide a solid base fo
 
 ## To-do
 
-- Figure out how to add subpages like Features/Custom fonts (folders / subfolders ??? check Emma MDX starter ...)
-- Add content for Features and Blogs via Remark (with components !) and MDX
-
 ## Features
 
+- Markdown support with Remark
 - Modular scale
 - Custom fonts
 - Theming with light and dark color schemes
@@ -28,6 +26,10 @@ This multipurpose starter *moves slow and fix things* to provide a solid base fo
 - Based on the barebones [Gatsby Default Starter](https://www.gatsbyjs.org/docs/quick-start)
 
 ## Plugins
+
+### Remark
+
+- https://www.gatsbyjs.org/packages/gatsby-transformer-remark/
 
 ### Modular scale
 

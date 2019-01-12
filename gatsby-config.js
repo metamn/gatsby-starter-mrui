@@ -6,8 +6,6 @@ module.exports = {
 	},
 	pathPrefix: `/gatsby-starter-mrui`,
 	plugins: [
-		`gatsby-plugin-styled-components`,
-		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -15,6 +13,30 @@ module.exports = {
 				path: `${__dirname}/src/images`,
 			},
 		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `pages`,
+				path: `${__dirname}/src/pages/features`,
+			},
+		},
+		{
+			resolve: `gatsby-transformer-remark`,
+			options: {
+				// CommonMark mode (default: true)
+				commonmark: true,
+				// Footnotes mode (default: true)
+				footnotes: true,
+				// Pedantic mode (default: true)
+				pedantic: true,
+				// GitHub Flavored Markdown mode (default: true)
+				gfm: true,
+				// Plugins configs
+				plugins: [],
+			},
+		},
+		`gatsby-plugin-styled-components`,
+		`gatsby-plugin-react-helmet`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{

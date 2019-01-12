@@ -1,7 +1,51 @@
 /**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+* Implement Gatsby's Node APIs in this file.
+*
+* See: https://www.gatsbyjs.org/docs/node-apis/
+*/
 
-// You can delete this file if you're not using it
+const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
+
+exports.createPages = ({ graphql, actions }) => {
+	const { createPage } = actions
+
+	return new Promise((resolve, reject) => {
+		const featurePageTemplate = path.resolve('./src/templates/feature.js')
+
+		resolve(
+			graphql(
+				`
+				{
+					allMarkdownRemark(
+						limit: 1000
+					) {
+						edges {
+							node {
+								frontmatter {
+									path
+								}
+							}
+						}
+					}
+				}
+				`
+			).then(result => {
+				if (result.errors) {
+					console.log(result.errors)
+					reject(result.errors)
+				}
+
+				console.log('r:' + JSON.stringify(result.data));
+
+				result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+					createPage({
+						path: node.frontmatter.path,
+						component: featurePageTemplate,
+						context: {},
+					})
+				})
+			})
+		)
+	})
+}
