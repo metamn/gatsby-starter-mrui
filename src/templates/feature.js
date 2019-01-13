@@ -26,11 +26,11 @@ class FeaturePageTemplate extends React.Component {
 export default FeaturePageTemplate
 
 export const pageQuery = graphql`
-    query FeaturePageByPath($path: String!) {
-        markdownRemark(frontmatter: { path: { eq: $path } }) {
+    query FeaturePageBySlug($slug: String!) {
+        markdownRemark(fields: { slug: { eq: $slug } }) {
+            id
             html
             frontmatter {
-                path
                 title
             }
         }

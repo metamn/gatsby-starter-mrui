@@ -21,11 +21,13 @@ const FeaturesPage = () => (
                 </li>
                 <li>
                     <Link to="/features/custom-fonts">
-                        Custom fonts (with Remark)
+                        Custom fonts (rendered with Remark)
                     </Link>
                 </li>
                 <li>
-                    <Link to="/features/theming">Theming (with MDX)</Link>
+                    <Link to="/features/theming">
+                        Theming (renderedd with MDX)
+                    </Link>
                 </li>
             </ul>
         </Container>
