@@ -1,10 +1,10 @@
 /**
-* A CSS reset
-*
-*/
-import React from "react";
-import PropTypes from "prop-types";
-import { createGlobalStyle } from "styled-components";
+ * A CSS reset
+ *
+ */
+import React from 'react'
+import PropTypes from 'prop-types'
+import { createGlobalStyle } from 'styled-components'
 
 import 'normalize.css'
 
@@ -65,24 +65,22 @@ const GlobalReset = createGlobalStyle`
 `
 
 /**
-* The main class
-*/
+ * The main class
+ */
 class Reset extends React.Component {
-	render() {
-		return <GlobalReset />
-	}
+    render() {
+        return <GlobalReset />
+    }
 }
 
 /**
-* The prop types
-*/
-Reset.propTypes = {
-};
+ * The prop types
+ */
+Reset.propTypes = {}
 
 /**
-* Default props
-*/
-Reset.defaultProps = {
-};
+ * Default props
+ */
+Reset.defaultProps = {}
 
-export default Reset;
+export default Reset

@@ -11,38 +11,31 @@ import Text from '../Text'
 import Color from '../Color'
 
 const Container = styled.div`
-	${Text()}
-	${Color()}
+    ${Text()}
+    ${Color()}
 `
 
 const Layout = ({ title, keywords, children }) => (
-	<>
-		<Reset />
-		<TypographicGrid
-			displayVerticalRhytm={false}
-			displayHorizontalRhytm={false}
-		/>
-		<SEO
-			title={title}
-			keywords={keywords}
-		/>
-		<Container>
-			{children}
-		</Container>
-	</>
+    <>
+        <Reset />
+        <TypographicGrid
+            displayVerticalRhytm={false}
+            displayHorizontalRhytm={false}
+        />
+        <SEO title={title} keywords={keywords} />
+        <Container>{children}</Container>
+    </>
 )
 
-
 Layout.propTypes = {
-	children: PropTypes.node.isRequired,
-	title: PropTypes.string,
-	keywords: PropTypes.array,
+    children: PropTypes.node.isRequired,
+    title: PropTypes.string,
+    keywords: PropTypes.array,
 }
 
 Layout.defaultProps = {
-	title: 'Home',
-	keywords: [`gatsby`],
+    title: 'Home',
+    keywords: [`gatsby`],
 }
-
 
 export default Layout

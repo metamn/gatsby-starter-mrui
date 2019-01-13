@@ -6,15 +6,23 @@ import Font from '../Font'
 import Scale from '../Scale'
 
 const Text = (style = 'body') => {
-	const text = theme.text[style]
-	if (!text) return
+    const text = theme.text[style]
+    if (!text) return
 
-	let ret = ''
+    let ret = ''
 
-	ret += text.scale ? css`${Scale(text.scale)}` : ''
-	ret += text.font ? css`${Font(text.font)}` : ''
+    ret += text.scale
+        ? css`
+              ${Scale(text.scale)}
+          `
+        : ''
+    ret += text.font
+        ? css`
+              ${Font(text.font)}
+          `
+        : ''
 
-	return ret
+    return ret
 }
 
 export default Text

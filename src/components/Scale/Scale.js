@@ -4,14 +4,14 @@ import theme from '../Theme'
 import ms from 'modularscale-js'
 
 const Scale = (scale = 0) => {
-	const settings = theme.scale
-	const size = `${ms(scale, settings)}em`
+    const settings = theme.scale
+    const size = `${ms(scale, settings)}em`
 
-	// return css`font-size: ${size}` gives a strange error
+    // return css`font-size: ${size}` gives a strange error
 
-	return {
-		fontSize: size
-	}
+    return {
+        fontSize: size,
+    }
 }
 
 export default Scale
