@@ -20,7 +20,7 @@ const { createFilePath } = require('gatsby-source-filesystem')
  */
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
-    const featurePageTemplate = path.resolve('./src/templates/feature.js')
+    const pageTemplate = path.resolve('./src/templates/page.js')
     const blogPostTemplate = path.resolve('./src/templates/post.js')
 
     // Posts
@@ -73,9 +73,7 @@ exports.createPages = ({ graphql, actions }) => {
     const features = graphql(`
         {
             features: allMarkdownRemark(
-                filter: {
-                    fileAbsolutePath: { glob: "**/src/pages/features/**/*.md" }
-                }
+                filter: { fileAbsolutePath: { glob: "**/src/pages/**/*.md" } }
                 limit: 1000
             ) {
                 edges {
@@ -99,7 +97,7 @@ exports.createPages = ({ graphql, actions }) => {
         result.data.features.edges.forEach(({ node }) => {
             createPage({
                 path: node.fields.slug,
-                component: featurePageTemplate,
+                component: pageTemplate,
                 context: {
                     slug: node.fields.slug,
                 },

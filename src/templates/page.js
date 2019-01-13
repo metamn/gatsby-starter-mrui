@@ -9,12 +9,12 @@ const Container = styled.div`
     padding: var(--lem);
 `
 
-class FeaturePageTemplate extends React.Component {
+class PageTemplate extends React.Component {
     render() {
         const page = this.props.data.markdownRemark
 
         return (
-            <Layout title="Features">
+            <Layout title="Page">
                 <Container>
                     <h1>{page.frontmatter.title}</h1>
                 </Container>
@@ -23,10 +23,10 @@ class FeaturePageTemplate extends React.Component {
     }
 }
 
-export default FeaturePageTemplate
+export default PageTemplate
 
 export const pageQuery = graphql`
-    query FeaturePageBySlug($slug: String!) {
+    query PageBySlug($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
             id
             html
