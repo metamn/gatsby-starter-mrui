@@ -13,6 +13,9 @@ import Color from '../Color'
 const Container = styled.div`
     ${Text()}
     ${Color()}
+
+	min-height: 100vh;
+    padding: var(--lem);
 `
 
 const Layout = ({ title, keywords, children }) => (

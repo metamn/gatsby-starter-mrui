@@ -1,13 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-
-const Container = styled.div`
-    min-height: 100vh;
-    padding: var(--lem);
-`
 
 class CategoryTemplate extends React.Component {
     render() {

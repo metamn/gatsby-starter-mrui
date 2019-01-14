@@ -1,13 +1,11 @@
+/**
+ * The Feature page template
+ *
+ */
 import React from 'react'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
 
 import Layout from '../components/Layout'
-
-const Container = styled.div`
-    min-height: 100vh;
-    padding: var(--lem);
-`
 
 class FeaturePageTemplate extends React.Component {
     render() {
@@ -15,9 +13,7 @@ class FeaturePageTemplate extends React.Component {
 
         return (
             <Layout title="Feature Page">
-                <Container>
-                    <h1>{feature.frontmatter.title}</h1>
-                </Container>
+                <h1>{feature.frontmatter.title}</h1>
             </Layout>
         )
     }
@@ -25,7 +21,7 @@ class FeaturePageTemplate extends React.Component {
 
 export default FeaturePageTemplate
 
-export const featuresPageQuery = graphql`
+export const featurePageQuery = graphql`
     query FeaturePageBySlug($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
             id
