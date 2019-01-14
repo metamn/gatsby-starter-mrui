@@ -1,52 +1,85 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 
-class BlogPostTemplate extends React.Component {
-    render() {
-        const post = this.props.data.markdownRemark
-        const { previous, next } = this.props.pageContext
+const PostTemplate = ({ pageContext, data }) => {
+    const post = data.markdownRemark
+    const { title, date, category, tags } = post.frontmatter
+    const { previous, next } = pageContext
 
-        return (
-            <Layout title="Post">
-                <h1>{post.frontmatter.title}</h1>
-                <p>{post.frontmatter.date}</p>
-                <div dangerouslySetInnerHTML={{ __html: post.html }} />
-                <hr />
-
-                <ul>
+    return (
+        <Layout title="Post Page">
+            <h1>{title}</h1>
+            <p>{date}</p>
+            <p>{category}</p>
+            <p>{tags ? tags.join(', ') : ''}</p>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <hr />
+            <ul>
+                {previous && (
                     <li>
-                        {previous && (
-                            <Link to={previous.fields.slug} rel="prev">
-                                ← {previous.frontmatter.title}
-                            </Link>
-                        )}
+                        <Link to={previous.fields.slug} rel="prev">
+                            ← {previous.frontmatter.title}
+                        </Link>
                     </li>
+                )}
+                {next && (
                     <li>
-                        {next && (
-                            <Link to={next.fields.slug} rel="next">
-                                {next.frontmatter.title} →
-                            </Link>
-                        )}
+                        <Link to={next.fields.slug} rel="next">
+                            {next.frontmatter.title} →
+                        </Link>
                     </li>
-                </ul>
-            </Layout>
-        )
-    }
+                )}
+            </ul>
+        </Layout>
+    )
 }
 
-export default BlogPostTemplate
+PostTemplate.propTypes = {
+    pageContext: PropTypes.shape({
+        previous: PropTypes.shape({
+            fields: PropTypes.shape({
+                slug: PropTypes.string.isRequired,
+            }).isRequired,
+            frontmatter: PropTypes.shape({
+                title: PropTypes.string.isRequired,
+            }).isRequired,
+        }),
+        next: PropTypes.shape({
+            fields: PropTypes.shape({
+                slug: PropTypes.string.isRequired,
+            }).isRequired,
+            frontmatter: PropTypes.shape({
+                title: PropTypes.string.isRequired,
+            }).isRequired,
+        }),
+    }),
+    data: PropTypes.shape({
+        markdownRemark: PropTypes.shape({
+            html: PropTypes.string.isRequired,
+            frontmatter: PropTypes.shape({
+                title: PropTypes.string.isRequired,
+                date: PropTypes.instanceOf(Date).isRequired,
+                category: PropTypes.string,
+                tags: PropTypes.arrayOf(String),
+            }).isRequired,
+        }),
+    }),
+}
+
+export default PostTemplate
 
 export const pageQuery = graphql`
     query BlogPostBySlug($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
-            id
-            excerpt(pruneLength: 160)
             html
             frontmatter {
                 title
                 date(formatString: "MMMM DD, YYYY")
+                category
+                tags
             }
         }
     }

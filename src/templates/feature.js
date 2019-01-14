@@ -12,7 +12,7 @@ const FeatureTemplate = ({ data }) => {
         <Layout title="Feature Page">
             <h1>{title}</h1>
             <p>{category}</p>
-            <p>{tags}</p>
+            <p>{tags.join(', ')}</p>
             <div dangerouslySetInnerHTML={{ __html: page.html }} />
         </Layout>
     )
