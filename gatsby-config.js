@@ -30,6 +30,7 @@ module.exports = {
             resolve: 'gatsby-plugin-tags',
             options: {
                 templatePath: `${__dirname}/src/templates/tag.js`,
+                prefix: '/tag/',
             },
         },
         {
