@@ -1,47 +1,60 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../../components/Layout'
 
-class BlogIndex extends React.Component {
-    render() {
-        const { data } = this.props
-        const siteTitle = data.site.siteMetadata.title
-        const posts = data.allMarkdownRemark.edges
+const BlogPage = ({
+    data: {
+        allMarkdownRemark: { edges },
+    },
+}) => (
+    <Layout title="Blog index">
+        {edges.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
 
-        return (
-            <Layout title="Blog index">
-                {posts.map(({ node }) => {
-                    const title = node.frontmatter.title || node.fields.slug
+            return (
+                <div key={node.fields.slug}>
+                    <h3>
+                        <Link to={node.fields.slug}>{title}</Link>
+                    </h3>
+                    <small>{node.frontmatter.date}</small>
+                    <p
+                        dangerouslySetInnerHTML={{
+                            __html: node.excerpt,
+                        }}
+                    />
+                </div>
+            )
+        })}
+    </Layout>
+)
 
-                    return (
-                        <div key={node.fields.slug}>
-                            <h3>
-                                <Link to={node.fields.slug}>{title}</Link>
-                            </h3>
-                            <small>{node.frontmatter.date}</small>
-                            <p
-                                dangerouslySetInnerHTML={{
-                                    __html: node.excerpt,
-                                }}
-                            />
-                        </div>
-                    )
-                })}
-            </Layout>
-        )
-    }
+BlogPage.propTypes = {
+    data: PropTypes.shape({
+        allMarkdownRemark: PropTypes.shape({
+            edges: PropTypes.arrayOf(
+                PropTypes.shape({
+                    node: PropTypes.shape({
+                        frontmatter: PropTypes.shape({
+                            title: PropTypes.string.isRequired,
+                            date: PropTypes.instanceOf(Date).isRequired,
+                        }).isRequired,
+                        fields: PropTypes.shape({
+                            slug: PropTypes.string.isRequired,
+                        }).isRequired,
+                        excerpt: PropTypes.string.isRequired,
+                    }).isRequired,
+                }).isRequired
+            ),
+        }),
+    }),
 }
 
-export default BlogIndex
+export default BlogPage
 
 export const pageQuery = graphql`
     query {
-        site {
-            siteMetadata {
-                title
-            }
-        }
         allMarkdownRemark(
             filter: { fileAbsolutePath: { glob: "**/src/pages/blog/**/*.md" } }
             sort: { order: DESC, fields: frontmatter___date }

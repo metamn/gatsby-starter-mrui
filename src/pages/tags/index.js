@@ -7,9 +7,6 @@ import Layout from '../../components/Layout'
 const TagsPage = ({
     data: {
         allMarkdownRemark: { group },
-        site: {
-            siteMetadata: { title },
-        },
     },
 }) => (
     <Layout title="Tags index">
@@ -36,11 +33,6 @@ TagsPage.propTypes = {
                 }).isRequired
             ),
         }),
-        site: PropTypes.shape({
-            siteMetadata: PropTypes.shape({
-                title: PropTypes.string.isRequired,
-            }),
-        }),
     }),
 }
 
@@ -48,11 +40,6 @@ export default TagsPage
 
 export const pageQuery = graphql`
     query {
-        site {
-            siteMetadata {
-                title
-            }
-        }
         allMarkdownRemark(limit: 1000) {
             group(field: frontmatter___tags) {
                 fieldValue
