@@ -1,33 +1,46 @@
-/**
- * The Feature page template
- *
- */
 import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 
-class FeaturePageTemplate extends React.Component {
-    render() {
-        const feature = this.props.data.markdownRemark
+const FeatureTemplate = ({ data }) => {
+    const page = data.markdownRemark
+    const { title, category, tags } = page.frontmatter
 
-        return (
-            <Layout title="Feature Page">
-                <h1>{feature.frontmatter.title}</h1>
-            </Layout>
-        )
-    }
+    return (
+        <Layout title="Feature Page">
+            <h1>{title}</h1>
+            <p>{category}</p>
+            <p>{tags}</p>
+            <div dangerouslySetInnerHTML={{ __html: page.html }} />
+        </Layout>
+    )
 }
 
-export default FeaturePageTemplate
+FeatureTemplate.propTypes = {
+    data: PropTypes.shape({
+        markdownRemark: PropTypes.shape({
+            html: PropTypes.string.isRequired,
+            frontmatter: PropTypes.shape({
+                title: PropTypes.string.isRequired,
+                category: PropTypes.string,
+                tags: PropTypes.arrayOf(String),
+            }).isRequired,
+        }),
+    }),
+}
+
+export default FeatureTemplate
 
 export const featurePageQuery = graphql`
     query FeaturePageBySlug($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
-            id
             html
             frontmatter {
                 title
+                category
+                tags
             }
         }
     }

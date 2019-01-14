@@ -20,7 +20,7 @@ const { createFilePath } = require('gatsby-source-filesystem')
  */
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
-    const featurePageTemplate = path.resolve('./src/templates/feature.js')
+    const featureTemplate = path.resolve('./src/templates/feature.js')
     const blogPostTemplate = path.resolve('./src/templates/post.js')
 
     // Posts
@@ -101,7 +101,7 @@ exports.createPages = ({ graphql, actions }) => {
         result.data.features.edges.forEach(({ node }) => {
             createPage({
                 path: node.fields.slug,
-                component: featurePageTemplate,
+                component: featureTemplate,
                 context: {
                     slug: node.fields.slug,
                 },

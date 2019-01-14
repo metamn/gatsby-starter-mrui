@@ -1,6 +1,7 @@
 ---
 title: 'Custom fonts'
-category: 'React'
+category: 'react'
+tags: ['fonts']
 ---
 
-Custom fonts! REGEN !!!
+Custom fonts content heeere !!!
