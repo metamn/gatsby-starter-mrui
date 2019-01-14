@@ -18,11 +18,14 @@ This multipurpose starter _moves slow and fix things_ to provide a solid base fo
 
 ## Features
 
+- Categories
+ - At least one post or page has to have a category set, otherwise GraphQL will throw an error.
+ - All content types (posts, pages) share the same category / taxonomy
 - Custom content types
  - Inside `/pages` there can be custom content types like blog posts, features, and more
- - Each content type has it's own frontmatter rules / queries and `templates`.
- - These can be set up via `gatsby-node.js`
- - This way all content goes inside `pages` - since they are pages(!)
+ - Each content type has it's own frontmatter rules / queries and `/templates`.
+ - These all can be set up via `gatsby-node.js`
+ - This way all content goes inside `pages` - since all content are pages
 - Markdown support with Remark and MDX
 - Modular scale
 - Custom fonts
@@ -34,6 +37,10 @@ This multipurpose starter _moves slow and fix things_ to provide a solid base fo
 - Based on the barebones [Gatsby Default Starter](https://www.gatsbyjs.org/docs/quick-start)
 
 ## Plugins
+
+### Categories
+
+- https://www.gatsbyjs.org/packages/gatsby-plugin-categories/?=categ
 
 ### MDX
 
