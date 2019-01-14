@@ -13,15 +13,15 @@ This multipurpose starter _moves slow and fix things_ to provide a solid base fo
 
 ## To-do
 
-- I can't make 'test/' behave like '/features' ...
 - Test Remark features
 - Sometimes a `rm -Rf .cache/gatsby-mdx/*` needed to fix nasty unknown errors like `ReferenceError: window is not defined`
 
 ## Features
 
 - Posts and Pages
- - Posts are prefixed with 'blog'
+ - Posts are prefixed with `blog`
  - Pages are prefixed with `path` from the Front Matter
+ - Posts and pages are processed differently in `gatsby-node.js` 
 - Markdown support with Remark and MDX
 - Modular scale
 - Custom fonts

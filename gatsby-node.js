@@ -69,10 +69,10 @@ exports.createPages = ({ graphql, actions }) => {
         })
     })
 
-    // Features
-    const features = graphql(`
+    // Pages
+    const pages = graphql(`
         {
-            features: allMarkdownRemark(
+            pages: allMarkdownRemark(
                 filter: { fileAbsolutePath: { glob: "**/src/pages/**/*.md" } }
                 limit: 1000
             ) {
@@ -94,7 +94,7 @@ exports.createPages = ({ graphql, actions }) => {
             Promise.reject(result.errors)
         }
 
-        result.data.features.edges.forEach(({ node }) => {
+        result.data.pages.edges.forEach(({ node }) => {
             createPage({
                 path: node.fields.slug,
                 component: pageTemplate,
@@ -106,7 +106,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     // Return a Promise which would wait for both the queries to resolve
-    return Promise.all([posts, features])
+    return Promise.all([posts, pages])
 }
 
 /**
