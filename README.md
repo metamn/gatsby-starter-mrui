@@ -13,66 +13,65 @@ This multipurpose starter _moves slow and fix things_ to provide a solid base fo
 
 ## To-do
 
--   It seems on small updates a cached page is displayed (check custom-fonts)
--   I can't make 'test/' behave like '/features' ...
--   Test Remark features
--   Sometimes a `rm -Rf .cache/gatsby-mdx/*` needed to fix nasty unknown errors like `ReferenceError: window is not defined`
+- I can't make 'test/' behave like '/features' ...
+- Test Remark features
+- Sometimes a `rm -Rf .cache/gatsby-mdx/*` needed to fix nasty unknown errors like `ReferenceError: window is not defined`
 
 ## Features
 
--   Posts and Pages
--   Posts are prefixed with 'blog'
--   Pages are prefixed with `path` from the Front Matter
--   Markdown support with Remark and MDX
--   Modular scale
--   Custom fonts
--   Theming with light and dark color schemes
--   A typographic grid: https://tinyurl.com/yd2q4rpw
--   A CSS reset: https://tinyurl.com/y9msxecc
--   Better SEO titles
--   Deploys to Github Pages
--   Based on the barebones [Gatsby Default Starter](https://www.gatsbyjs.org/docs/quick-start)
+- Posts and Pages
+ - Posts are prefixed with 'blog'
+ - Pages are prefixed with `path` from the Front Matter
+- Markdown support with Remark and MDX
+- Modular scale
+- Custom fonts
+- Theming with light and dark color schemes
+- A typographic grid: https://tinyurl.com/yd2q4rpw
+- A CSS reset: https://tinyurl.com/y9msxecc
+- Better SEO titles
+- Deploys to Github Pages
+- Based on the barebones [Gatsby Default Starter](https://www.gatsbyjs.org/docs/quick-start)
 
 ## Plugins
 
 ### MDX
 
--   https://www.gatsbyjs.org/packages/gatsby-mdx/
--   It works out of the box without any config / graphql magic
--   mapping HTML elements is done be rendering the MDX file content inside the <Layout> component
+- https://www.gatsbyjs.org/packages/gatsby-mdx/
+- It works out of the box without any config / graphql magic
+- Mapping HTML elements is done be rendering the MDX file content inside the <Layout> component
 
 ### Remark
 
--   https://www.gatsbyjs.org/packages/gatsby-transformer-remark/
--   all options and plugins are enabled except KaTeX, and rendering components: https://using-remark.gatsbyjs.org/custom-components/
--   rendering components will be done by MDX
--   mapping HTML elements is already done since the template is rendered inside the <Layout> component which re-styles the markdown output
+- https://www.gatsbyjs.org/packages/gatsby-transformer-remark/
+- All options and plugins are enabled except KaTeX, and rendering components: https://using-remark.gatsbyjs.org/custom-components/
+- Rendering components will be done by MDX
+- Mapping HTML elements is already done since the template is rendered inside the <Layout> component which re-styles the markdown output
 
 ### Modular scale
 
--   https://www.modularscale.com/
+- https://www.modularscale.com/
 
 ### webfontloader
 
--   https://github.com/typekit/webfontloader
+- https://github.com/typekit/webfontloader
 
 ### Styled components
 
--   https://www.gatsbyjs.org/docs/styled-components/
+- https://www.gatsbyjs.org/docs/styled-components/
 
 ### `gatsby-image`, to display images
 
--   [gatsby-image](https://www.gatsbyjs.org/docs/working-with-images/#optimizing-images-with-gatsby-image)
--   [A comprehensive guide](https://www.orangejellyfish.com/blog/a-comprehensive-guide-to-images-in-gatsby/)
--   Component: Image
+- [gatsby-image](https://www.gatsbyjs.org/docs/working-with-images/#optimizing-images-with-gatsby-image)
+- [A comprehensive guide](https://www.orangejellyfish.com/blog/a-comprehensive-guide-to-images-in-gatsby/)
+- Component: Image
 
 ### Sharp, for resizing and optimizig images
 
--   [Sharp](https://www.gatsbyjs.org/docs/working-with-images/#query-images-with-graphql)
--   Setup: `gatsby-config.js`
+- [Sharp](https://www.gatsbyjs.org/docs/working-with-images/#query-images-with-graphql)
+- Setup: `gatsby-config.js`
 
 ### React Helmet, for SEO
 
--   [React Helmet](https://www.gatsbyjs.org/docs/add-page-metadata/) - for managing the document head
--   Component: SEO
--   Setup: `gatsby-config.js`
+- [React Helmet](https://www.gatsbyjs.org/docs/add-page-metadata/) - for managing the document head
+- Component: SEO
+- Setup: `gatsby-config.js`
