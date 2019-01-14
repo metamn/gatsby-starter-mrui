@@ -27,6 +27,12 @@ module.exports = {
             },
         },
         {
+            resolve: 'gatsby-plugin-tags',
+            options: {
+                templatePath: `${__dirname}/src/templates/tag.js`,
+            },
+        },
+        {
             resolve: `gatsby-transformer-remark`,
             options: {
                 // CommonMark mode (default: true)

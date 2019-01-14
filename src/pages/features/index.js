@@ -33,6 +33,9 @@ const FeaturesPage = () => (
             <p>
                 <Link to="/blog">Blog</Link>
             </p>
+            <p>
+                <Link to="/categories">Categories</Link>
+            </p>
         </Container>
     </Layout>
 )
