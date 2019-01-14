@@ -7,9 +7,6 @@ import Layout from '../../components/Layout'
 const CategoriesPage = ({
     data: {
         allMarkdownRemark: { group },
-        site: {
-            siteMetadata: { title },
-        },
     },
 }) => (
     <Layout title="Categories index">
@@ -50,11 +47,6 @@ export default CategoriesPage
 
 export const pageQuery = graphql`
     query {
-        site {
-            siteMetadata {
-                title
-            }
-        }
         allMarkdownRemark(limit: 1000) {
             group(field: frontmatter___category) {
                 fieldValue
