@@ -9,24 +9,24 @@ const Container = styled.div`
     padding: var(--lem);
 `
 
-class PageTemplate extends React.Component {
+class FeaturePageTemplate extends React.Component {
     render() {
-        const page = this.props.data.markdownRemark
+        const feature = this.props.data.markdownRemark
 
         return (
-            <Layout title="Page">
+            <Layout title="Feature Page">
                 <Container>
-                    <h1>{page.frontmatter.title}</h1>
+                    <h1>{feature.frontmatter.title}</h1>
                 </Container>
             </Layout>
         )
     }
 }
 
-export default PageTemplate
+export default FeaturePageTemplate
 
-export const pageQuery = graphql`
-    query PageBySlug($slug: String!) {
+export const featuresPageQuery = graphql`
+    query FeaturePageBySlug($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
             id
             html

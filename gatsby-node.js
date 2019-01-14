@@ -8,7 +8,7 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
 /**
- * Create pages for docs and posts separately using two separate
+ * Create different content types by using different
  * queries. We use the `graphql` function which returns a Promise
  * and ultimately resolve all of them using Promise.all(Promise[])
  *
@@ -20,7 +20,7 @@ const { createFilePath } = require('gatsby-source-filesystem')
  */
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
-    const pageTemplate = path.resolve('./src/templates/page.js')
+    const featurePageTemplate = path.resolve('./src/templates/feature.js')
     const blogPostTemplate = path.resolve('./src/templates/post.js')
 
     // Posts
@@ -71,10 +71,10 @@ exports.createPages = ({ graphql, actions }) => {
         })
     })
 
-    // Pages
-    const pages = graphql(`
+    // Features
+    const features = graphql(`
         {
-            pages: allMarkdownRemark(
+            features: allMarkdownRemark(
                 filter: {
                     fileAbsolutePath: { glob: "**/src/pages/features/**/*.md" }
                 }
@@ -98,10 +98,10 @@ exports.createPages = ({ graphql, actions }) => {
             Promise.reject(result.errors)
         }
 
-        result.data.pages.edges.forEach(({ node }) => {
+        result.data.features.edges.forEach(({ node }) => {
             createPage({
                 path: node.fields.slug,
-                component: pageTemplate,
+                component: featurePageTemplate,
                 context: {
                     slug: node.fields.slug,
                 },
@@ -110,7 +110,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     // Return a Promise which would wait for both the queries to resolve
-    return Promise.all([posts, pages])
+    return Promise.all([posts, features])
 }
 
 /**
@@ -127,7 +127,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions
 
     if (node.internal.type === `MarkdownRemark`) {
-        const path = node.frontmatter.path ? node.frontmatter.path : ''
         const relativeFilePath = createFilePath({
             node,
             getNode,
@@ -135,7 +134,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         createNodeField({
             node,
             name: `slug`,
-            value: `${path}${relativeFilePath}`,
+            value: `${relativeFilePath}`,
         })
     }
 }

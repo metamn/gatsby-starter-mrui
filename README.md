@@ -18,10 +18,11 @@ This multipurpose starter _moves slow and fix things_ to provide a solid base fo
 
 ## Features
 
-- Posts and Pages
- - Posts are prefixed with `blog`
- - Pages are prefixed with `path` from the Front Matter
- - Posts and pages are processed differently in `gatsby-node.js` 
+- Custom content types
+ - Inside `/pages` there can be custom content types like blog posts, features, and more
+ - Each content type has it's own frontmatter rules / queries and `templates`.
+ - These can be set up via `gatsby-node.js`
+ - This way all content goes inside `pages` - since they are pages(!)
 - Markdown support with Remark and MDX
 - Modular scale
 - Custom fonts
