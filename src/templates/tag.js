@@ -1,6 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import { Link, graphql } from 'gatsby'
+
+import Layout from '../components/Layout'
+
+const Container = styled.div`
+    min-height: 100vh;
+    padding: var(--lem);
+`
 
 const TagTemplate = ({ pageContext, data }) => {
     const { tag } = pageContext
@@ -10,7 +18,7 @@ const TagTemplate = ({ pageContext, data }) => {
     } tagged with "${tag}"`
 
     return (
-        <div>
+        <Container>
             <h1>{tagHeader}</h1>
             <ul>
                 {edges.map(({ node }) => {
@@ -27,7 +35,7 @@ const TagTemplate = ({ pageContext, data }) => {
               We'll come back to it!
             */}
             <Link to="/tags">All tags</Link>
-        </div>
+        </Container>
     )
 }
 
