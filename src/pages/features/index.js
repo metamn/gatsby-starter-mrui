@@ -30,6 +30,9 @@ const FeaturesPage = () => (
                     </Link>
                 </li>
             </ul>
+            <p>
+                <Link to="/blog">Blog</Link>
+            </p>
         </Container>
     </Layout>
 )
