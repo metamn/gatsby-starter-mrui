@@ -27,7 +27,9 @@ exports.createPages = ({ graphql, actions }) => {
     const posts = graphql(`
         {
             posts: allMarkdownRemark(
-                filter: { fileAbsolutePath: { glob: "**/src/posts/**/*.md" } }
+                filter: {
+                    fileAbsolutePath: { glob: "**/src/pages/blog/**/*.md" }
+                }
                 sort: { order: DESC, fields: frontmatter___date }
                 limit: 1000
             ) {
@@ -73,7 +75,9 @@ exports.createPages = ({ graphql, actions }) => {
     const pages = graphql(`
         {
             pages: allMarkdownRemark(
-                filter: { fileAbsolutePath: { glob: "**/src/pages/**/*.md" } }
+                filter: {
+                    fileAbsolutePath: { glob: "**/src/pages/features/**/*.md" }
+                }
                 limit: 1000
             ) {
                 edges {
@@ -123,11 +127,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions
 
     if (node.internal.type === `MarkdownRemark`) {
-        const path = node.frontmatter.path
-            ? node.frontmatter.path
-            : node.fileAbsolutePath.includes('/posts/')
-            ? '/blog'
-            : ''
+        const path = node.frontmatter.path ? node.frontmatter.path : ''
         const relativeFilePath = createFilePath({
             node,
             getNode,

@@ -49,7 +49,7 @@ export const pageQuery = graphql`
             }
         }
         allMarkdownRemark(
-            filter: { fileAbsolutePath: { glob: "**/src/posts/**/*.md" } }
+            filter: { fileAbsolutePath: { glob: "**/src/pages/blog/**/*.md" } }
             sort: { order: DESC, fields: frontmatter___date }
             limit: 1000
         ) {
