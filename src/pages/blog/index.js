@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import PageTitle from '../../components/PageTitle'
 import PageDate from '../../components/PageDate'
+import Page from '../../components/Page'
 
 const BlogPage = ({
     data: {
@@ -17,6 +18,10 @@ const BlogPage = ({
 
             return (
                 <div key={node.fields.slug}>
+                    <Page
+                        title={<Link to={node.fields.slug}>{title}</Link>}
+                        date={node.frontmatter.date}
+                    />
                     <PageTitle>
                         <Link to={node.fields.slug}>{title}</Link>
                     </PageTitle>
