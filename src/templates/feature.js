@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
+import PageTitle from '../components/PageTitle'
 
 const FeatureTemplate = ({ data }) => {
     const page = data.markdownRemark
@@ -10,7 +11,7 @@ const FeatureTemplate = ({ data }) => {
 
     return (
         <Layout title="Feature Page">
-            <h1>{title}</h1>
+            <PageTitle>{title}</PageTitle>
             <p>{category}</p>
             <p>{tags.join(', ')}</p>
             <div dangerouslySetInnerHTML={{ __html: page.html }} />
@@ -37,8 +38,8 @@ export const featureTemplateQuery = graphql`
     query FeatureTemplateQuery($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
             html
+            ...PageTitleFragment
             frontmatter {
-                title
                 category
                 tags
             }
