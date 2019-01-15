@@ -3,28 +3,25 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
+import Page from '../components/Page'
 
 const TagTemplate = ({ pageContext, data }) => {
     const { tag } = pageContext
     const { edges, totalCount } = data.allMarkdownRemark
-    const tagHeader = `${totalCount} post${
+    const Header = `${totalCount} post${
         totalCount === 1 ? '' : 's'
     } tagged with "${tag}"`
 
     return (
         <Layout>
-            <h1>{tagHeader}</h1>
-            <ul>
-                {edges.map(({ node }) => {
-                    const { title } = node.frontmatter
-                    const { slug } = node.fields
-                    return (
-                        <li key={slug}>
-                            <Link to={slug}>{title}</Link>
-                        </li>
-                    )
-                })}
-            </ul>
+            <h1>{Header}</h1>
+            {edges.map(({ node }) => {
+                const { title } = node.frontmatter
+                const { slug } = node.fields
+                return (
+                    <Page key={slug} title={<Link to={slug}>{title}</Link>} />
+                )
+            })}
             <Link to="/tags">All tags</Link>
         </Layout>
     )
@@ -65,11 +62,9 @@ export const tagTemplateQuery = graphql`
             totalCount
             edges {
                 node {
+                    ...PageTitleFragment
                     fields {
                         slug
-                    }
-                    frontmatter {
-                        title
                     }
                 }
             }

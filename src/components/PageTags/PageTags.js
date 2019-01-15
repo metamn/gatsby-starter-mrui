@@ -23,10 +23,12 @@ const Container = styled.div``
 class PageTags extends React.Component {
     render() {
         const { tags, loading, className } = this.props
-        const tagsWithLink = tags.map(tag => ({
-            title: tag,
-            slug: `/tag/${tag}`,
-        }))
+        const tagsWithLink = tags
+            ? tags.map(tag => ({
+                  title: tag,
+                  slug: `/tag/${tag}`,
+              }))
+            : []
 
         if (loading) {
             return <Loading className={className}>Loading ...</Loading>

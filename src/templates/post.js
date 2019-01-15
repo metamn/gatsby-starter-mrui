@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
+import Page from '../components/Page'
 
 const PostTemplate = ({ pageContext, data }) => {
     const post = data.markdownRemark
@@ -11,28 +12,26 @@ const PostTemplate = ({ pageContext, data }) => {
 
     return (
         <Layout title="Post Page">
-            <h1>{title}</h1>
-            <p>{date}</p>
-            <p>{category}</p>
-            <p>{tags ? tags.join(', ') : ''}</p>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            <hr />
-            <ul>
-                {previous && (
-                    <li>
-                        <Link to={previous.fields.slug} rel="prev">
-                            ← {previous.frontmatter.title}
-                        </Link>
-                    </li>
-                )}
-                {next && (
-                    <li>
-                        <Link to={next.fields.slug} rel="next">
-                            {next.frontmatter.title} →
-                        </Link>
-                    </li>
-                )}
-            </ul>
+            <Page title={title} date={date} category={category} tags={tags}>
+                <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                <hr />
+                <ul>
+                    {previous && (
+                        <li>
+                            <Link to={previous.fields.slug} rel="prev">
+                                ← {previous.frontmatter.title}
+                            </Link>
+                        </li>
+                    )}
+                    {next && (
+                        <li>
+                            <Link to={next.fields.slug} rel="next">
+                                {next.frontmatter.title} →
+                            </Link>
+                        </li>
+                    )}
+                </ul>
+            </Page>
         </Layout>
     )
 }
@@ -75,12 +74,7 @@ export const postTemplateQuery = graphql`
     query PostTemplateQuery($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
             html
-            frontmatter {
-                title
-                date(formatString: "MMMM DD, YYYY")
-                category
-                tags
-            }
+            ...PageFragment
         }
     }
 `
