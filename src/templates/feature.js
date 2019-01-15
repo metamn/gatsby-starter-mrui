@@ -33,8 +33,8 @@ FeatureTemplate.propTypes = {
 
 export default FeatureTemplate
 
-export const featurePageQuery = graphql`
-    query FeaturePageBySlug($slug: String!) {
+export const featureTemplateQuery = graphql`
+    query FeatureTemplateQuery($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
             html
             frontmatter {

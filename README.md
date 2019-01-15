@@ -13,11 +13,15 @@ This multipurpose starter _moves slow and fix things_ to provide a solid base fo
 
 ## To-do
 
+- Markdown html is not displayed
 - Test Remark features
 - Sometimes a `rm -Rf .cache/gatsby-mdx/*` needed to fix nasty unknown errors like `ReferenceError: window is not defined`
 
 ## Features
 
+- Clean code
+ - PropTypes: https://www.gatsbyjs.org/docs/adding-tags-and-categories-to-blog-posts/
+ - Uniform naming: `templates/feature.js` > `FeatureTemplate` > `featureTemplateQuery` > `FeatureTemplateQuery` 
 - Categories and tags
  - At least one post or page has to have a category and tag set, otherwise GraphQL will throw an error.
  - With these plugins all content types (posts, pages) share the same category / taxonomy. Otherwise (https://www.gatsbyjs.org/docs/adding-tags-and-categories-to-blog-posts/) only posts can have taxonomies

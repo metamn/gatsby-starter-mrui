@@ -55,8 +55,8 @@ TagTemplate.propTypes = {
 
 export default TagTemplate
 
-export const pageQuery = graphql`
-    query($tag: String) {
+export const tagTemplateQuery = graphql`
+    query TagTemplateQuery($tag: String) {
         allMarkdownRemark(
             limit: 1000
             sort: { fields: [frontmatter___date], order: DESC }

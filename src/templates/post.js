@@ -71,8 +71,8 @@ PostTemplate.propTypes = {
 
 export default PostTemplate
 
-export const pageQuery = graphql`
-    query BlogPostBySlug($slug: String!) {
+export const postTemplateQuery = graphql`
+    query PostTemplateQuery($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
             html
             frontmatter {
