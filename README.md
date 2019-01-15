@@ -13,6 +13,7 @@ This multipurpose starter _moves slow and fix things_ to provide a solid base fo
 
 ## To-do
 
+- It seems categories and tags are not case insensitive (due to the plugins)
 - DRY post and pages GraphQL filters
 - Markdown html is not displayed
 - Test Remark features

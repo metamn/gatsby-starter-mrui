@@ -59,9 +59,6 @@ export const blogPageQuery = graphql`
             edges {
                 node {
                     ...PageFragment
-                    fields {
-                        slug
-                    }
                 }
             }
         }

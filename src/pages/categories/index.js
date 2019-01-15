@@ -12,15 +12,18 @@ const CategoriesPage = ({
     <Layout title="Categories">
         <h1>Categories</h1>
         <ul>
-            {group.map(category => (
-                <li key={category.fieldValue}>
-                    <Link
-                        to={`/category/${category.fieldValue.toLowerCase()}/`}
-                    >
-                        {category.fieldValue} ({category.totalCount})
-                    </Link>
-                </li>
-            ))}
+            {group.map(category => {
+                const name = category.fieldValue.toLowerCase()
+                const count = category.totalCount
+
+                return (
+                    <li key={name}>
+                        <Link to={`/category/${name}/`}>
+                            {name} ({count})
+                        </Link>
+                    </li>
+                )
+            })}
         </ul>
     </Layout>
 )
@@ -34,11 +37,6 @@ CategoriesPage.propTypes = {
                     totalCount: PropTypes.number.isRequired,
                 }).isRequired
             ),
-        }),
-        site: PropTypes.shape({
-            siteMetadata: PropTypes.shape({
-                title: PropTypes.string.isRequired,
-            }),
         }),
     }),
 }

@@ -75,5 +75,8 @@ export const pageTitleFragment = graphql`
         frontmatter {
             title
         }
+        fields {
+            slug
+        }
     }
 `

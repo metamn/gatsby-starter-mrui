@@ -63,9 +63,6 @@ export const categoryTemplateQuery = graphql`
             edges {
                 node {
                     ...PageTitleFragment
-                    fields {
-                        slug
-                    }
                 }
             }
         }
