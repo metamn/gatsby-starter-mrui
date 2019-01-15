@@ -38,8 +38,8 @@ TagsPage.propTypes = {
 
 export default TagsPage
 
-export const pageQuery = graphql`
-    query {
+export const tagsPageQuery = graphql`
+    query TagsPageQuery {
         allMarkdownRemark(limit: 1000) {
             group(field: frontmatter___tags) {
                 fieldValue

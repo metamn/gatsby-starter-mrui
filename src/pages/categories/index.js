@@ -45,8 +45,8 @@ CategoriesPage.propTypes = {
 
 export default CategoriesPage
 
-export const pageQuery = graphql`
-    query {
+export const categoriesPageQuery = graphql`
+    query CategoriesPageQuery {
         allMarkdownRemark(limit: 1000) {
             group(field: frontmatter___category) {
                 fieldValue

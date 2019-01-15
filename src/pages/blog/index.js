@@ -53,8 +53,8 @@ BlogPage.propTypes = {
 
 export default BlogPage
 
-export const pageQuery = graphql`
-    query {
+export const blogPageQuery = graphql`
+    query blogPageQuery {
         allMarkdownRemark(
             filter: { fileAbsolutePath: { glob: "**/src/pages/blog/**/*.md" } }
             sort: { order: DESC, fields: frontmatter___date }
