@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../../components/Layout'
 import PageTitle from '../../components/PageTitle'
+import PageDate from '../../components/PageDate'
 
 const BlogPage = ({
     data: {
@@ -19,7 +20,7 @@ const BlogPage = ({
                     <PageTitle>
                         <Link to={node.fields.slug}>{title}</Link>
                     </PageTitle>
-                    <small>{node.frontmatter.date}</small>
+                    <PageDate>{node.frontmatter.date}</PageDate>
                     <p
                         dangerouslySetInnerHTML={{
                             __html: node.excerpt,
@@ -68,9 +69,7 @@ export const blogPageQuery = graphql`
                         slug
                     }
                     ...PageTitleFragment
-                    frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
-                    }
+                    ...PageDateFragment
                 }
             }
         }

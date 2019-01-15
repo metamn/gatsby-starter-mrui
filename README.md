@@ -20,7 +20,7 @@ This multipurpose starter _moves slow and fix things_ to provide a solid base fo
 ## Features
 
 - Clean code
- - DRY with GraphQL fragments: https://www.gatsbyjs.org/docs/using-fragments/
+ - DRY with GraphQL fragments: https://www.gatsbyjs.org/docs/using-fragments/, https://blog.manifold.co/graphql-fragments-are-the-best-match-for-ui-components-72b8f61c20fe
  - PropTypes: https://www.gatsbyjs.org/docs/adding-tags-and-categories-to-blog-posts/
  - Uniform naming: `templates/feature.js` > `FeatureTemplate` > `featureTemplateQuery` > `FeatureTemplateQuery`
 - Categories and tags

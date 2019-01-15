@@ -1,5 +1,5 @@
 /**
- * Page title
+ * Page date
  *
  */
 import React from 'react'
@@ -15,19 +15,14 @@ const Loading = styled.div``
 /**
  * The main container
  */
-const Container = styled.h3``
-
-/**
- * The text container
- */
-const Text = styled.span``
+const Container = styled.div``
 
 /**
  * The main class
  */
-class PageTitle extends React.Component {
+class PageDate extends React.Component {
     render() {
-        const { children, wrapper, loading, className } = this.props
+        const { children, loading, className } = this.props
 
         if (loading) {
             return <Loading className={className}>Loading ...</Loading>
@@ -35,7 +30,7 @@ class PageTitle extends React.Component {
 
         return (
             <Container className={className}>
-                <Text>{children}</Text>
+                <time datetime={children}>{children}</time>
             </Container>
         )
     }
@@ -44,15 +39,11 @@ class PageTitle extends React.Component {
 /**
  * The prop types
  */
-PageTitle.propTypes = {
+PageDate.propTypes = {
     /**
      * Component is loading?
      */
     loading: PropTypes.bool,
-    /**
-     * The HTML tag wrapper
-     */
-    wrapper: PropTypes.string,
     /**
      * The content
      */
@@ -62,18 +53,17 @@ PageTitle.propTypes = {
 /**
  * Default props
  */
-PageTitle.defaultProps = {
+PageDate.defaultProps = {
     loading: false,
-    wrapper: 'h3',
     children: '',
 }
 
-export default PageTitle
+export default PageDate
 
-export const pageTitleFragment = graphql`
-    fragment PageTitleFragment on MarkdownRemark {
+export const pageDateFragment = graphql`
+    fragment PageDateFragment on MarkdownRemark {
         frontmatter {
-            title
+            date(formatString: "MMMM DD, YYYY")
         }
     }
 `
