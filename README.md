@@ -13,9 +13,12 @@ This multipurpose starter _moves slow and fix things_ to provide a solid base fo
 
 ## To-do
 
+- Convert blogs, categories, tags, features into a List component
+- Convert tags and categories into a Taxonomy component
 - It seems categories and tags are not case insensitive (due to the plugins)
-- DRY post and pages GraphQL filters
 - Markdown html is not displayed
+- Add variables to GraphQL queries (filter blob, limit)
+- Check if GraphQL fails when missing arguments
 - Test Remark features
 - Sometimes a `rm -Rf .cache/gatsby-mdx/*` needed to fix nasty unknown errors like `ReferenceError: window is not defined`
 
