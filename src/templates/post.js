@@ -11,7 +11,7 @@ const PostTemplate = ({ pageContext, data }) => {
     const { previous, next } = pageContext
 
     return (
-        <Layout title="Post Page">
+        <Layout title={title}>
             <Page title={title} date={date} category={category} tags={tags}>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 <hr />

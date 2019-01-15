@@ -9,7 +9,7 @@ const TagsPage = ({
         allMarkdownRemark: { group },
     },
 }) => (
-    <Layout title="Tags index">
+    <Layout title="Tags">
         <h1>Tags</h1>
         <ul>
             {group.map(tag => (

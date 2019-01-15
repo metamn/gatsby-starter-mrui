@@ -10,7 +10,7 @@ const BlogPage = ({
         allMarkdownRemark: { edges },
     },
 }) => (
-    <Layout title="Blog index">
+    <Layout title="Blog">
         {edges.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
 

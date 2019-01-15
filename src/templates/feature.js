@@ -10,7 +10,7 @@ const FeatureTemplate = ({ data }) => {
     const { title, category, tags } = page.frontmatter
 
     return (
-        <Layout title="Feature Page">
+        <Layout title={title}>
             <Page title={title} category={category} tags={tags}>
                 <div dangerouslySetInnerHTML={{ __html: page.html }} />
             </Page>

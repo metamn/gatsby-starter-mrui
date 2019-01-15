@@ -13,6 +13,7 @@ This multipurpose starter _moves slow and fix things_ to provide a solid base fo
 
 ## To-do
 
+- DRY post and pages GraphQL filters
 - Markdown html is not displayed
 - Test Remark features
 - Sometimes a `rm -Rf .cache/gatsby-mdx/*` needed to fix nasty unknown errors like `ReferenceError: window is not defined`

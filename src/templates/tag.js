@@ -13,7 +13,7 @@ const TagTemplate = ({ pageContext, data }) => {
     } tagged with "${tag}"`
 
     return (
-        <Layout>
+        <Layout title={tag}>
             <h1>{Header}</h1>
             {edges.map(({ node }) => {
                 const { title } = node.frontmatter

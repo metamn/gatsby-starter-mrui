@@ -10,7 +10,7 @@ const Button = styled.button`
 `
 
 const IndexPage = () => (
-    <Layout>
+    <Layout title="Home">
         <h1>A Gatsby multipurpose starter</h1>
         <p>Gives you a headstart for:</p>
         <ul>

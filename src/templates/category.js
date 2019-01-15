@@ -13,7 +13,7 @@ const CategoryTemplate = ({ pageContext, data }) => {
     } in "${category}"`
 
     return (
-        <Layout>
+        <Layout title={category}>
             <h1>{Header}</h1>
             {edges.map(({ node }) => {
                 const { title } = node.frontmatter
