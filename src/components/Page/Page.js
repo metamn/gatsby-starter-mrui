@@ -9,6 +9,7 @@ import { Link, graphql } from 'gatsby'
 
 import PageTitle from '../PageTitle'
 import PageDate from '../PageDate'
+import PageExcerpt from '../PageExcerpt'
 
 /**
  * The loading container
@@ -25,7 +26,7 @@ const Container = styled.article``
  */
 class Page extends React.Component {
     render() {
-        const { title, date, loading, className } = this.props
+        const { title, date, excerpt, loading, className } = this.props
 
         if (loading) {
             return <Loading className={className}>Loading ...</Loading>
@@ -35,6 +36,7 @@ class Page extends React.Component {
             <Container className={className}>
                 <PageTitle>{title}</PageTitle>
                 <PageDate>{date}</PageDate>
+                <PageExcerpt>{excerpt}</PageExcerpt>
             </Container>
         )
     }
@@ -69,6 +71,7 @@ Page.defaultProps = {
     loading: false,
     title: '',
     date: '',
+    excerpt: '',
 }
 
 export default Page
@@ -77,5 +80,6 @@ export const pageFragment = graphql`
     fragment PageFragment on MarkdownRemark {
         ...PageTitleFragment
         ...PageDateFragment
+        ...PageExcerptFragment
     }
 `

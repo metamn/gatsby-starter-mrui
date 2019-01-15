@@ -1,5 +1,5 @@
 /**
- * Page title
+ * Page excerpt
  *
  */
 import React from 'react'
@@ -15,7 +15,7 @@ const Loading = styled.div``
 /**
  * The main container
  */
-const Container = styled.h3``
+const Container = styled.div``
 
 /**
  * The text container
@@ -25,9 +25,9 @@ const TextContainer = styled.span``
 /**
  * The main class
  */
-class PageTitle extends React.Component {
+class PageExcerpt extends React.Component {
     render() {
-        const { children, wrapper, loading, className } = this.props
+        const { children, loading, className } = this.props
 
         if (loading) {
             return <Loading className={className}>Loading ...</Loading>
@@ -35,7 +35,9 @@ class PageTitle extends React.Component {
 
         return (
             <Container className={className}>
-                <TextContainer>{children}</TextContainer>
+                <TextContainer
+                    dangerouslySetInnerHTML={{ __html: `${children}` }}
+                />
             </Container>
         )
     }
@@ -44,15 +46,11 @@ class PageTitle extends React.Component {
 /**
  * The prop types
  */
-PageTitle.propTypes = {
+PageExcerpt.propTypes = {
     /**
      * Component is loading?
      */
     loading: PropTypes.bool,
-    /**
-     * The HTML tag wrapper
-     */
-    wrapper: PropTypes.string,
     /**
      * The content
      */
@@ -62,18 +60,15 @@ PageTitle.propTypes = {
 /**
  * Default props
  */
-PageTitle.defaultProps = {
+PageExcerpt.defaultProps = {
     loading: false,
-    wrapper: 'h3',
     children: '',
 }
 
-export default PageTitle
+export default PageExcerpt
 
-export const pageTitleFragment = graphql`
-    fragment PageTitleFragment on MarkdownRemark {
-        frontmatter {
-            title
-        }
+export const pageExcerptFragment = graphql`
+    fragment PageExcerptFragment on MarkdownRemark {
+        excerpt
     }
 `
