@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
+import Page from '../components/Page'
 
 const CategoryTemplate = ({ pageContext, data }) => {
     const { category } = pageContext
@@ -14,17 +15,13 @@ const CategoryTemplate = ({ pageContext, data }) => {
     return (
         <Layout>
             <h1>{Header}</h1>
-            <ul>
-                {edges.map(({ node }) => {
-                    const { title } = node.frontmatter
-                    const { slug } = node.fields
-                    return (
-                        <li key={slug}>
-                            <Link to={slug}>{title}</Link>
-                        </li>
-                    )
-                })}
-            </ul>
+            {edges.map(({ node }) => {
+                const { title } = node.frontmatter
+                const { slug } = node.fields
+                return (
+                    <Page key={slug} title={<Link to={slug}>{title}</Link>} />
+                )
+            })}
             <Link to="/categories">All categories</Link>
         </Layout>
     )
@@ -65,11 +62,9 @@ export const categoryTemplateQuery = graphql`
             totalCount
             edges {
                 node {
+                    ...PageTitleFragment
                     fields {
                         slug
-                    }
-                    frontmatter {
-                        title
                     }
                 }
             }

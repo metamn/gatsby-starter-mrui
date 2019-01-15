@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import PageTitle from '../components/PageTitle'
+import Page from '../components/Page'
 
 const FeatureTemplate = ({ data }) => {
     const page = data.markdownRemark
@@ -11,10 +11,11 @@ const FeatureTemplate = ({ data }) => {
 
     return (
         <Layout title="Feature Page">
-            <PageTitle>{title}</PageTitle>
-            <p>{category}</p>
-            <p>{tags.join(', ')}</p>
-            <div dangerouslySetInnerHTML={{ __html: page.html }} />
+            <Page title={title}>
+                <p>{category}</p>
+                <p>{tags.join(', ')}</p>
+                <div dangerouslySetInnerHTML={{ __html: page.html }} />
+            </Page>
         </Layout>
     )
 }
