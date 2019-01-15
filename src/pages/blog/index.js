@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../../components/Layout'
+import PageTitle from '../../components/PageTitle'
 
 const BlogPage = ({
     data: {
@@ -15,9 +16,9 @@ const BlogPage = ({
 
             return (
                 <div key={node.fields.slug}>
-                    <h3>
+                    <PageTitle>
                         <Link to={node.fields.slug}>{title}</Link>
-                    </h3>
+                    </PageTitle>
                     <small>{node.frontmatter.date}</small>
                     <p
                         dangerouslySetInnerHTML={{
@@ -66,9 +67,9 @@ export const blogPageQuery = graphql`
                     fields {
                         slug
                     }
+                    ...PageTitleFragment
                     frontmatter {
                         date(formatString: "MMMM DD, YYYY")
-                        title
                     }
                 }
             }
