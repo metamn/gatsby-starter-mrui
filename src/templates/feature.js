@@ -11,9 +11,7 @@ const FeatureTemplate = ({ data }) => {
 
     return (
         <Layout title="Feature Page">
-            <Page title={title}>
-                <p>{category}</p>
-                <p>{tags.join(', ')}</p>
+            <Page title={title} category={category} tags={tags}>
                 <div dangerouslySetInnerHTML={{ __html: page.html }} />
             </Page>
         </Layout>
@@ -39,11 +37,7 @@ export const featureTemplateQuery = graphql`
     query FeatureTemplateQuery($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
             html
-            ...PageTitleFragment
-            frontmatter {
-                category
-                tags
-            }
+            ...PageFragment
         }
     }
 `
