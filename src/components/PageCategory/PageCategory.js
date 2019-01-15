@@ -6,6 +6,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { Link, graphql } from 'gatsby'
+import { kebabCase } from 'lodash'
 
 /**
  * The loading container
@@ -23,7 +24,9 @@ const Container = styled.div``
 class PageCategory extends React.Component {
     render() {
         const { category, loading, className } = this.props
-        const slug = `/category/${category}`
+
+        const name = kebabCase(category)
+        const slug = `/category/${name}`
 
         if (loading) {
             return <Loading className={className}>Loading ...</Loading>
@@ -31,7 +34,7 @@ class PageCategory extends React.Component {
 
         return (
             <Container className={className}>
-                <Link to={slug}>{category}</Link>
+                <Link to={slug}>{name}</Link>
             </Container>
         )
     }

@@ -6,6 +6,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { Link, graphql } from 'gatsby'
+import { kebabCase } from 'lodash'
 
 /**
  * The loading container
@@ -25,8 +26,8 @@ class PageTags extends React.Component {
         const { tags, loading, className } = this.props
         const tagsWithLink = tags
             ? tags.map(tag => ({
-                  title: tag,
-                  slug: `/tag/${tag}`,
+                  title: kebabCase(tag),
+                  slug: `/tag/${kebabCase(tag)}`,
               }))
             : []
 

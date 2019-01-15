@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
+import { kebabCase } from 'lodash'
 
 import Layout from '../../components/Layout'
 
@@ -12,13 +13,19 @@ const TagsPage = ({
     <Layout title="Tags">
         <h1>Tags</h1>
         <ul>
-            {group.map(tag => (
-                <li key={tag.fieldValue}>
-                    <Link to={`/tag/${tag.fieldValue.toLowerCase()}/`}>
-                        {tag.fieldValue} ({tag.totalCount})
-                    </Link>
-                </li>
-            ))}
+            {group.map(tag => {
+                const name = kebabCase(tag.fieldValue)
+                const count = tag.totalCount
+                const slug = `/tag/${name}/`
+
+                return (
+                    <li key={name}>
+                        <Link to={slug}>
+                            {name} ({count})
+                        </Link>
+                    </li>
+                )
+            })}
         </ul>
     </Layout>
 )
